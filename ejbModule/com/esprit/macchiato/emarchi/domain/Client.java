@@ -3,6 +3,8 @@ package com.esprit.macchiato.emarchi.domain;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -27,8 +29,20 @@ public class Client implements Serializable {
 	private byte photo;
 	private byte genuine;
 	private boolean state;
+
+	@OneToOne(mappedBy="client")
+	private ShoppingCart cart;
+	
+	 
+	 @ManyToMany(cascade = { CascadeType.ALL })  
+	 @JoinTable(name = "ProductReview") 
+	private List<Products> commentedProd ;
+	
 	private static final long serialVersionUID = 1L;
 
+	@OneToMany(mappedBy="client")
+	private List<Payment> payments ; 
+	
 	public Client() {
 		super();
 	}   
@@ -116,5 +130,31 @@ public class Client implements Serializable {
 	public void setState(boolean state) {
 		this.state = state;
 	}
+	public String geteMail() {
+		return eMail;
+	}
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
+	}
+	public ShoppingCart getCart() {
+		return cart;
+	}
+	public void setCart(ShoppingCart cart) {
+		this.cart = cart;
+	}
+	public List<Payment> getPayments() {
+		return payments;
+	}
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
+	}
+	public List<Products> getCommentedProd() {
+		return commentedProd;
+	}
+	public void setCommentedProd(List<Products> commentedProd) {
+		this.commentedProd = commentedProd;
+	}
+	
+	
    
 }

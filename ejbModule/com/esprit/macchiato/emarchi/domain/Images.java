@@ -1,6 +1,7 @@
 package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -16,7 +17,10 @@ public class Images implements Serializable {
 	private int IDImage;
 	private byte image;
 	private static final long serialVersionUID = 1L;
-
+	
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Products product;
 	public Images() {
 		super();
 	}   

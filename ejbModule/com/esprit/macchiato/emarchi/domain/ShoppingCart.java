@@ -1,6 +1,7 @@
 package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -14,6 +15,19 @@ public class ShoppingCart implements Serializable {
 	   
 	@Id
 	private int IDShoppingCart;
+	
+
+	@OneToOne
+	@JoinColumn(nullable=false)
+	private Client client;
+	
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	public ShoppingCart() {

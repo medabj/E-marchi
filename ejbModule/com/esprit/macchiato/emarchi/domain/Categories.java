@@ -2,6 +2,8 @@ package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -17,6 +19,9 @@ public class Categories implements Serializable {
 	private int IDCategorie;
 	private String Description;
 	private byte Logo;
+	
+	@OneToMany(mappedBy="categorie")
+	private List<Products> products;
 	private static final long serialVersionUID = 1L;
 
 	public Categories() {
@@ -43,5 +48,12 @@ public class Categories implements Serializable {
 	public void setLogo(byte Logo) {
 		this.Logo = Logo;
 	}
+	public List<Products> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Products> products) {
+		this.products = products;
+	}
    
+	
 }

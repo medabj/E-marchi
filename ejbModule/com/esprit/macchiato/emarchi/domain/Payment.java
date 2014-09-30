@@ -16,6 +16,11 @@ public class Payment implements Serializable {
 	@Id
 	private int IDPayment;
 	private Date paymentDate;
+	
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Client client;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Payment() {
@@ -35,5 +40,13 @@ public class Payment implements Serializable {
 	public void setPaymentDate(Date paymentDate) {
 		this.paymentDate = paymentDate;
 	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	
    
 }
