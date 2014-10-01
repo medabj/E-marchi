@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -34,9 +35,8 @@ public class Client implements Serializable {
 	private ShoppingCart cart;
 	
 	 
-	 @ManyToMany(cascade = { CascadeType.ALL })  
-	 @JoinTable(name = "ProductReview") 
-	private List<Products> commentedProd ;
+	 @ManyToMany()
+	private Set<Products> commentedProd ;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -148,10 +148,10 @@ public class Client implements Serializable {
 	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
 	}
-	public List<Products> getCommentedProd() {
+	public Set<Products> getCommentedProd() {
 		return commentedProd;
 	}
-	public void setCommentedProd(List<Products> commentedProd) {
+	public void setCommentedProd(Set<Products> commentedProd) {
 		this.commentedProd = commentedProd;
 	}
 	

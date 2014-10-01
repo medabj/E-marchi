@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -31,8 +32,8 @@ public class Products implements Serializable {
 	private List<Images> images;
 	
 	@ManyToMany
-	@JoinColumn(nullable=false)
-	private List<Client> commenters;
+	@JoinTable(name="Productreview")
+	private Set<Client> clients;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -86,12 +87,13 @@ public class Products implements Serializable {
 	public void setImages(List<Images> images) {
 		this.images = images;
 	}
-	public List<Client> getCommenters() {
-		return commenters;
+	public Set<Client> getClients() {
+		return clients;
 	}
-	public void setCommenters(List<Client> commenters) {
-		this.commenters = commenters;
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
 	}
+	
    
 	
 }
