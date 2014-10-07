@@ -35,11 +35,13 @@ public class Client implements Serializable {
 	private ShoppingCart cart;
 	
 	 
-	 @ManyToMany()
-	private Set<Products> commentedProd ;
+	// @ManyToMany()
+	//private Set<Products> commentedProd ;
 	
 	private static final long serialVersionUID = 1L;
-
+	@OneToMany(mappedBy="client")
+	private List<ProductReview>Commented;
+	
 	@OneToMany(mappedBy="client")
 	private List<Payment> payments ; 
 	
@@ -148,11 +150,11 @@ public class Client implements Serializable {
 	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
 	}
-	public Set<Products> getCommentedProd() {
-		return commentedProd;
+	public List<ProductReview> getCommentedProd() {
+		return Commented;
 	}
-	public void setCommentedProd(Set<Products> commentedProd) {
-		this.commentedProd = commentedProd;
+	public void setCommentedProd(List<ProductReview> commentedProd) {
+		this.Commented = commentedProd;
 	}
 	
 	
