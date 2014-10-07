@@ -23,16 +23,17 @@ public class AdminCrudEJB implements AdminCrudEJBRemote, AdminCrudEJBLocal {
         // TODO Auto-generated constructor stub
     }
 
-	@Override
-	public Client findgeall(long id) {
-		// TODO Auto-generated method stub
-		return em.find(Client.class, id);
-	}
-
+	
 	@Override
 	public void delete(Client p) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Client findbyid(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
