@@ -6,7 +6,7 @@ import com.esprit.macchiato.emarchi.domain.Client;
 
 @Remote
 public interface AdminCrudEJBRemote {
-	public Client findgeall(long id);
+	public Client findbyid(long id);
 	public void delete(Client p);
 
 }
