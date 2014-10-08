@@ -1,5 +1,6 @@
 package com.esprit.macchiato.emarchi.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -51,7 +52,7 @@ public class ClientCrudEJB implements ClientCrudEJBRemote, ClientCrudEJBLocal {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Client> findAllclient() {
+	public Collection<Client> findAllclient() {
 		// TODO Auto-generated method stub
 		Query query=em.createQuery("select s from Client s");
 		return query.getResultList();

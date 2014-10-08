@@ -56,6 +56,10 @@ public class Client implements Serializable {
 		return this.IDClient;
 	}
 
+	@Override
+	public String toString() {
+		return "Client [firstName=" + firstName + "]";
+	}
 	public void setIDClient(int IDClient) {
 		this.IDClient = IDClient;
 	}   
