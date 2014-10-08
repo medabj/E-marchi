@@ -18,6 +18,7 @@ public class Client implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDClient;
 	private String firstName;
 	private String lastName;

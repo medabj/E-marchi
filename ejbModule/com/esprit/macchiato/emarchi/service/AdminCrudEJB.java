@@ -2,10 +2,6 @@ package com.esprit.macchiato.emarchi.service;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-import com.esprit.macchiato.emarchi.domain.Client;
 
 /**
  * Session Bean implementation class AdminCrudEJB
@@ -13,8 +9,6 @@ import com.esprit.macchiato.emarchi.domain.Client;
 @Stateless
 @LocalBean
 public class AdminCrudEJB implements AdminCrudEJBRemote, AdminCrudEJBLocal {
-	@PersistenceContext(unitName="e-marchiEJB")
-	private EntityManager em;
 
     /**
      * Default constructor. 
@@ -22,18 +16,5 @@ public class AdminCrudEJB implements AdminCrudEJBRemote, AdminCrudEJBLocal {
     public AdminCrudEJB() {
         // TODO Auto-generated constructor stub
     }
-
-	
-	@Override
-	public void delete(Client p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Client findbyid(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

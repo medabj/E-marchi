@@ -12,7 +12,7 @@
 		<class>com.esprit.macchiato.emarchi.domain.Products</class>
 		<class>com.esprit.macchiato.emarchi.domain.ShoppingCart</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create" ></property>
+			<property name="hibernate.hbm2ddl.auto" value="update" ></property>
 		</properties>
 	</persistence-unit>
 </persistence>
