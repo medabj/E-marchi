@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.esprit.macchiato.emarchi.domain.Admin;
 import com.esprit.macchiato.emarchi.domain.Client;
 
 /**
@@ -28,14 +27,7 @@ public class ClientCrudEJB implements ClientCrudEJBRemote, ClientCrudEJBLocal {
     }
 
 	
-	@Override
-	public void delete( Client p) {
-		// TODO Auto-generated method stub
-		 em.remove(em.merge(p));	
-	}
-
 	
-
 
 	@Override
 	public void addPerson(Client p) throws Exception {
@@ -51,18 +43,31 @@ public class ClientCrudEJB implements ClientCrudEJBRemote, ClientCrudEJBLocal {
 
 
 	@Override
-	public Client findbyid(long id) {
+	public Client findbyid(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return em.find(Client.class, id);
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Client> findAllclient() {
 		// TODO Auto-generated method stub
 		Query query=em.createQuery("select s from Client s");
 		return query.getResultList();
 	}
+
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		em.remove(em.find(Client.class,id));	
+	}
+
+
+
+
+	
 
 
 	

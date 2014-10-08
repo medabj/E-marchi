@@ -10,8 +10,8 @@ import com.esprit.macchiato.emarchi.domain.Client;
 @Remote
 public interface ClientCrudEJBRemote {
 	public void addPerson(Client p) throws Exception;
-	public Client findbyid(long id);
-	public void delete(Client p);
+	public Client findbyid(int id);
+	public void delete(int id);
 	public List<Client> findAllclient();
 	
 

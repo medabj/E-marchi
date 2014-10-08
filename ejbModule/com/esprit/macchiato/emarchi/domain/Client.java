@@ -1,12 +1,15 @@
 package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
-import java.lang.String;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Client
