@@ -1,5 +1,7 @@
 package com.esprit.macchiato.emarchi.service;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import com.esprit.macchiato.emarchi.domain.Categories;
@@ -19,4 +21,5 @@ public interface CategorieCrudEJBRemote {
 		
 		public void test(Categories p); 
 
+		public List<Categories> findAllCategories();
 }

@@ -22,6 +22,7 @@ public class Products implements Serializable {
 	private String Description;
 	private float Price;
 	private Date depotDate;
+	private Client owner;
 	
 	@ManyToOne
 	//@JoinColumn()
@@ -91,6 +92,19 @@ public class Products implements Serializable {
 	}
 	public void setCommenters(List<ProductReview> commenters) {
 		this.commenters = commenters;
+	}
+	public Client getOwner() {
+		return owner;
+	}
+	public void setOwner(Client owner) {
+		this.owner = owner;
+	}
+	@Override
+	public String toString() {
+		return "Products [IDProduct=" + IDProduct + ", nameProduct="
+				+ nameProduct + ", Description=" + Description + ", Price="
+				+ Price + ", depotDate=" + depotDate + 
+				", categorie=" + getCategorie().getDescription() + "]";
 	}
    
 	

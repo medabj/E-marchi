@@ -1,6 +1,7 @@
 package com.esprit.macchiato.emarchi.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.Remote;
 
@@ -13,7 +14,7 @@ public interface OffersCRUDRemote {
 
 	public Products findOfferById(int id);
 
-	public Collection<Products> findAllOffers();
+	public List<Products> findAllOffers();
 
 	public void updateOffer(Products p);
 
