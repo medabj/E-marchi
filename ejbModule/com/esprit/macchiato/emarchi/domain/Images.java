@@ -14,8 +14,10 @@ public class Images implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDImage;
-	private byte image;
+	@Lob
+	private byte[] image;
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToOne
@@ -31,11 +33,11 @@ public class Images implements Serializable {
 	public void setIDImage(int IDImage) {
 		this.IDImage = IDImage;
 	}   
-	public byte getImage() {
+	public byte[] getImage() {
 		return this.image;
 	}
 
-	public void setImage(byte image) {
+	public void setImage(byte[] image) {
 		this.image = image;
 	}
    

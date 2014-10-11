@@ -2,6 +2,7 @@ package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import javax.persistence.*;
 
 /**
@@ -14,6 +15,7 @@ public class Payment implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDPayment;
 	private Date paymentDate;
 	

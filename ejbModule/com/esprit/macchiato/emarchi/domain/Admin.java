@@ -3,7 +3,10 @@ package com.esprit.macchiato.emarchi.domain;
 import java.io.Serializable;
 import java.lang.Byte;
 import java.lang.String;
+
+import javax.ejb.BeforeCompletion;
 import javax.persistence.*;
+import javax.xml.ws.soap.Addressing;
 
 /**
  * Entity implementation class for Entity: Admin
@@ -15,10 +18,12 @@ public class Admin implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDAdmin;
 	private String login;
 	private String pwd;
-	private Byte photo;
+	@Lob
+	private Byte[] photo;
 	private static final long serialVersionUID = 1L;
 
 	public Admin() {
@@ -45,11 +50,11 @@ public class Admin implements Serializable {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}   
-	public Byte getPhoto() {
+	public Byte[] getPhoto() {
 		return this.photo;
 	}
 
-	public void setPhoto(Byte photo) {
+	public void setPhoto(Byte[] photo) {
 		this.photo = photo;
 	}
    

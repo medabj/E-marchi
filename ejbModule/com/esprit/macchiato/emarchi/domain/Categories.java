@@ -16,9 +16,11 @@ public class Categories implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDCategorie;
 	private String Description;
-	private byte Logo;
+	@Lob
+	private byte[] Logo;
 	
 	@OneToMany(mappedBy="categorie")
 	private List<Products> products;
@@ -41,11 +43,11 @@ public class Categories implements Serializable {
 	public void setDescription(String Description) {
 		this.Description = Description;
 	}   
-	public byte getLogo() {
+	public byte[] getLogo() {
 		return this.Logo;
 	}
 
-	public void setLogo(byte Logo) {
+	public void setLogo(byte[] Logo) {
 		this.Logo = Logo;
 	}
 	public List<Products> getProducts() {

@@ -14,10 +14,9 @@ import com.esprit.macchiato.emarchi.domain.Products;
  * Session Bean implementation class OffersCRUD
  */
 @Stateless
-@LocalBean
 public class OffersCRUD implements OffersCRUDRemote, OffersCRUDLocal {
 
-	@PersistenceContext(unitName="e-marchiEJB")
+	@PersistenceContext
 	private EntityManager em;
 
     /**

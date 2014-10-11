@@ -1,7 +1,6 @@
 package com.esprit.macchiato.emarchi.service;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -59,11 +58,20 @@ public class ClientCrudEJB implements ClientCrudEJBRemote, ClientCrudEJBLocal {
 	}
 
 
+
+
 	@Override
 	public void delete(int id) {
 		// TODO Auto-generated method stub
 		em.remove(em.find(Client.class,id));	
 	}
+
+
+	
+
+
+
+	
 
 
 

@@ -14,6 +14,7 @@ public class ShoppingCart implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDShoppingCart;
 	
 

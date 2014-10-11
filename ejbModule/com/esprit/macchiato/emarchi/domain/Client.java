@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -31,8 +32,10 @@ public class Client implements Serializable {
 	private long tel;
 	private String login;
 	private String pwd;
-	private byte photo;
-	private byte genuine;
+	@Lob
+	private byte[] photo;
+	@Lob
+	private byte[] genuine;
 	private boolean state;
 
 	@OneToOne(mappedBy="client")
@@ -119,18 +122,18 @@ public class Client implements Serializable {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}   
-	public byte getPhoto() {
+	public byte[] getPhoto() {
 		return this.photo;
 	}
 
-	public void setPhoto(byte photo) {
+	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}   
-	public byte getGenuine() {
+	public byte[] getGenuine() {
 		return this.genuine;
 	}
 
-	public void setGenuine(byte genuine) {
+	public void setGenuine(byte[] genuine) {
 		this.genuine = genuine;
 	}   
 	public boolean getState() {

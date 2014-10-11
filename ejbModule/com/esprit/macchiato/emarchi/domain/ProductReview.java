@@ -16,6 +16,7 @@ public class ProductReview implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private long IdProdR;
 	private String comment;
 	

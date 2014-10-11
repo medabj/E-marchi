@@ -12,11 +12,11 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class Products implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int IDProduct;
 	private String nameProduct;
 	private String Description;
@@ -24,7 +24,7 @@ public class Products implements Serializable {
 	private Date depotDate;
 	
 	@ManyToOne
-	@JoinColumn(nullable=false)
+	//@JoinColumn()
 	private Categories categorie;
 	
 	@OneToMany(mappedBy="product")

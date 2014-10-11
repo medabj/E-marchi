@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.jboss.security.acl.EntitlementEntry;
 
 import com.esprit.macchiato.emarchi.domain.Categories;
-import com.sun.xml.internal.stream.Entity;
 
 /**
  * Session Bean implementation class CategorieCrudEJB
