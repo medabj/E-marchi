@@ -1,12 +1,9 @@
 package com.esprit.macchiato.emarchi.service;
 
-import java.util.List;
-
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.jboss.security.acl.EntitlementEntry;
 
@@ -56,12 +53,6 @@ private EntityManager em;
 		em.merge(p).setDescription("hamza");
 		p.setDescription("Ali");
 		
-	}
-
-	@Override
-	public List<Categories> findAllCategories() {
-		Query query=em.createQuery("select c from Categories c");
-		return query.getResultList();
 	}
 	
 	

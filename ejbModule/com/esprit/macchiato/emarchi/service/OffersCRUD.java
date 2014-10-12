@@ -1,7 +1,6 @@
 package com.esprit.macchiato.emarchi.service;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -39,7 +38,7 @@ public class OffersCRUD implements OffersCRUDRemote, OffersCRUDLocal {
 	}
 
 	@Override
-	public List<Products> findAllOffers() {
+	public Collection<Products> findAllOffers() {
 		Query query=em.createQuery("select p from Products p");
 		return query.getResultList();
 	}

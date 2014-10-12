@@ -2,7 +2,6 @@ package com.esprit.macchiato.emarchi.domain;
 
 import java.io.Serializable;
 import java.lang.String;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.*;
@@ -56,12 +55,6 @@ public class Categories implements Serializable {
 	}
 	public void setProducts(List<Products> products) {
 		this.products = products;
-	}
-	@Override
-	public String toString() {
-		return "Categories [IDCategorie=" + IDCategorie + ", Description="
-				+ Description + "]";
-		//+ ", Logo=" + Arrays.toString(Logo) 
 	}
    
 	
